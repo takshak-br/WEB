@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 300px;
+            padding: 16px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #000000;
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link-description {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <form id="loginForm" action="#" method="post">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <button type="button" onclick="validateLogin()">Login</button>
+            <p class="error-message" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <div class="container hidden" id="linksContainer">
+<center>
+	<h1>WELCOME</h1>
+        <h2>Web Programming</h2>
+	<h6>Course Code:21CSL481 <br>CIE Marks:50<br>SEE Marks:50<br>Total Marks:100<br>Credits:01 <br>Exam Hours:02</h6>
+        <div class="links">
+            <p><a href="MODULE1.html">MODULE 1</a></p>
+            <p><a href="MODULE2.html">MODULE 2</a></p>
+            <p><a href="MODULE3.html">MODULE 3</a></p>
+            <p><a href="MODULE4.html">MODULE 4</a></p>
+            <p><a href="MODULE5.html">MODULE 5</a></p>
+            <p><a href="REFERENCE.html">REFERECNE</a></p>
+
+</center>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var loginContainer = document.getElementById("loginContainer");
+            var linksContainer = document.getElementById("linksContainer");
+            var errorMessage = document.getElementById("errorMessage");
+
+            if (username === "4YG21AD058" && password === "NAVKIS") {
+                // Successful login, show the links container and hide the login container
+                loginContainer.classList.add("hidden");
+                linksContainer.classList.remove("hidden");
+            } else {
+                // Display an error message
+                errorMessage.innerText = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>
